@@ -1,7 +1,7 @@
 let numero = document.querySelector('input');
 /* let tecla = numero.addEventListener('keydown', verificarChute);*/
 let saudacao = perguntaNome(prompt('Qual seu nome?: '));
-let numeroSecreto = parseInt(Math.random() * 10) + 1;
+let numeroSecreto = parseInt(Math.random() * 100) + 1;
 let tentativas = 0;
 
 function exibirTextoNaTela(tag, texto) {
@@ -19,9 +19,9 @@ function novoJogo() {
     let numeroAnterior = numeroSecreto;
     limpaInput();
     exibirTextoNaTela('p', 'Escolha um numero entre 1 e 10');
-    numeroSecreto = parseInt(Math.random() * 10) + 1;
+    numeroSecreto = parseInt(Math.random() * 100) + 1;
     while (numeroAnterior === numeroSecreto) {
-        numeroSecreto = parseInt(Math.random() * 10) + 1
+        numeroSecreto = parseInt(Math.random() * 100) + 1
     }
     document.getElementById('reiniciar').setAttribute('disabled', true);
 }
@@ -38,12 +38,12 @@ function contaTentativas() {
 function verificarChute(tecla) {
     //if (tecla.key === 'Enter') {
         if (numero.value <= 0) {
-            alert('Numero invalido, por gentileza utilize numeros entre 1 e 10');
+            alert('Numero invalido, por gentileza utilize numeros entre 1 e 100');
             contaTentativas();
             limpaInput();
             numero.focus();
-        } else if (numero.value > 10) {
-            alert('Numero invalido, por gentileza utilize numeros entre 1 e 10');
+        } else if (numero.value > 100) {
+            alert('Numero invalido, por gentileza utilize numeros entre 1 e 100');
             contaTentativas();
             limpaInput();
             numero.focus();
